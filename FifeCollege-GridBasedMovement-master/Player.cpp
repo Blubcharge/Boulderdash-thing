@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Grid.h"
 #include "FallingObject.h"
+#include "ExitObject.h"
 
 
 // Constructor
@@ -76,6 +77,7 @@ bool Player::input(const sf::Event& _event)
 			{
 				m_grid->MoveObject(m_gridX, m_gridY, targetX, targetY, true);
 			}
+
 			else if (targetCellObject != nullptr && targetCellObject->GetType() == GridObject::BOULDER)
 			{
 				if (_event.key.code == sf::Keyboard::Right && m_grid->GetObject(targetX + 1, targetY) == nullptr)
@@ -90,17 +92,10 @@ bool Player::input(const sf::Event& _event)
 				}
 
 			}
-			else if (targetCellObject != nullptr && targetCellObject->GetType() == GridObject::EXIT)
+			else if (targetCellObject != nullptr && targetCellObject->GetType() == GridObject::EXIT && m_grid->diamondsOnScreen <= 0)
 			{
-
-
 				targetCellObject->ReachedNextLevel = true;
-
-
 			}
-
-
-
 			// Return true since we handled some input
 			return true;
 		}

@@ -57,7 +57,7 @@ void FallingObject::update(const float& _dtAsSeconds)
 				if (targetCellObject != nullptr && targetCellObject->GetType() == Type::PLAYER)
 				{
 					HasKilledPlayer = true;
-					m_grid->SetObject(m_gridX, m_gridY, nullptr, false);
+					m_grid->MoveObject(m_gridX, m_gridY, m_gridX, m_gridY+1, true);
 				}
 				else
 				{

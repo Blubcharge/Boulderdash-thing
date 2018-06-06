@@ -12,7 +12,7 @@ public:
 	void update(const float& _dtAsSeconds) override;
 
 
-private:
+protected:
 
 	bool m_isExitOpen = false;
 

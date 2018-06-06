@@ -22,8 +22,8 @@ public:
 
 private:
 
-	int m_framesSinceLastUpdate = 20;
-	int m_targetFramesPerUpdate = 20;
+	int m_framesSinceLastUpdate = 40;
+	int m_targetFramesPerUpdate = 40;
 	bool m_isFalling = false;
 	bool m_killedPlayer = false;
 

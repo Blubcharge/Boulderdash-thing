@@ -8,6 +8,7 @@ void Engine::draw()
 	// Rub out the last frame
 	m_Window.clear(Color::Black);
 
+	//if the player has betten all levels
 	if (HasWon)
 	{
 		m_Window.setView(m_WinView);
