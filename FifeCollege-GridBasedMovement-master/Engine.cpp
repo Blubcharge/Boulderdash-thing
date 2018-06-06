@@ -66,12 +66,13 @@ void Engine::run()
 	}
 }
 
-void Engine::LoadLevel(int currentLevel) {
+void Engine::LoadLevel(int currentLevel)
+{
 
 
 	switch (currentLevel) {
 	case 1:
-		SpawnLevel( m_levelOne);
+		SpawnLevel(m_levelOne);
 		break;
 	case 2:
 		SpawnLevel(m_levelTwo);
@@ -87,15 +88,19 @@ void Engine::LoadLevel(int currentLevel) {
 	case 5:
 		SpawnLevel(m_levelFive);
 		break;
-	
+
 	}
-	
+
 }
 
-void Engine::SpawnLevel(int levelToLoad[10][10]) {
-	for (int x = 0; x < 10; x++) {
-		for (int y = 0; y < 10; y++) {
-			switch (levelToLoad[x][y]) {
+void Engine::SpawnLevel(int levelToLoad[10][10])
+{
+	for (int x = 0; x < 10; x++)
+	{
+		for (int y = 0; y < 10; y++)
+		{
+			switch (levelToLoad[x][y])
+			{
 			case 0:
 
 				m_Grid.SetObject(x, y, new GridSprite(TextureHolder::GetTexture("graphics/dirt.png"), GridObject::DIRT), true);

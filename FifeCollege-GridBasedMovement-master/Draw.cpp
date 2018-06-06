@@ -8,11 +8,13 @@ void Engine::draw()
 	// Rub out the last frame
 	m_Window.clear(Color::Black);
 
-	if (HasWon) {
+	if (HasWon)
+	{
 		m_Window.setView(m_WinView);
 		m_Window.draw(m_winSprite);
 	}
-	else {
+	else
+	{
 		// switch to main view
 		m_Window.setView(m_MainView);
 

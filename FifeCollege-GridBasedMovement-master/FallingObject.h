@@ -3,15 +3,22 @@
 #include "GridSprite.h"
 #include <ctime>
 
-class FallingObject : public GridSprite {
+class FallingObject : public GridSprite
+{
 
 public:
 
-	FallingObject(sf::Texture& _texture, GridObject::Type _type) : GridSprite(_texture, _type) { srand(time(0)); }
-	
+	FallingObject(sf::Texture& _texture, GridObject::Type _type) : GridSprite(_texture, _type)
+	{
+		srand(time(0));
+	}
+
 	void update(const float& _dtAsSeconds) override;
 
-	bool GetKilledPlayer() { return m_killedPlayer; }
+	bool GetKilledPlayer()
+	{
+		return m_killedPlayer;
+	}
 
 private:
 

@@ -2,7 +2,8 @@
 
 #include "GridSprite.h"
 
-class ExitObject : public GridSprite {
+class ExitObject : public GridSprite 
+{
 
 public:
 

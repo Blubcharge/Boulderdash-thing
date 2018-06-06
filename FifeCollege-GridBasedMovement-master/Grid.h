@@ -16,7 +16,7 @@ class Grid : public GameObject
 public:
 
 	// Constructor and Destructor
-	Grid(const int _GRID_SIZE_X, 
+	Grid(const int _GRID_SIZE_X,
 		const int _GRID_SIZE_Y,
 		const float _CELL_WIDTH,
 		const float _CELL_HEIGHT);
@@ -30,19 +30,23 @@ public:
 	// Grid Functions
 	GridObject* GetObject(int _x, int _y);
 
-	void SetObject(int _x, int _y, 
-		GridObject* _object, 
+	void SetObject(int _x, int _y,
+		GridObject* _object,
 		bool _deleteExisting = false);
 
 	void MoveObject(int _xOrigin, int _yOrigin,
 		int _xNew, int _yNew,
 		bool _deleteExisting = true);
 
-	sf::Vector2f GetPosition() 
-	{ return m_GridPosition; }
+	sf::Vector2f GetPosition()
+	{
+		return m_GridPosition;
+	}
 
 	void SetPosition(sf::Vector2f _newPos)
-	{ m_GridPosition = _newPos; }
+	{
+		m_GridPosition = _newPos;
+	}
 
 	// Const grid data members can be public
 	const int GRID_SIZE_X;

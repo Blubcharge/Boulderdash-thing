@@ -100,16 +100,20 @@ void Grid::update(const float& _dtAsSeconds)
 			// We check for nullptr in case there is nothing in this grid slot!
 			if (m_GridArray[x][y] != nullptr)
 				m_GridArray[x][y]->update(_dtAsSeconds);
-			if (m_GridArray[x][y] != nullptr && m_GridArray[x][y]->HasKilledPlayer) {
-				PlayerStillInGrid = false; 
+			if (m_GridArray[x][y] != nullptr && m_GridArray[x][y]->HasKilledPlayer)
+			{
+				PlayerStillInGrid = false;
 			}
-			if (m_GridArray[x][y] != nullptr && m_GridArray[x][y]->GetType() == GridObject::Type::DIAMOND) {
+			if (m_GridArray[x][y] != nullptr && m_GridArray[x][y]->GetType() == GridObject::Type::DIAMOND)
+			{
 				diamondsOnScreen++;
 			}
-			if (m_GridArray[x][y] != nullptr && m_GridArray[x][y]->ReachedNextLevel && m_GridArray[x][y]->GetType() == GridObject::Type::EXIT) {
+			if (m_GridArray[x][y] != nullptr && m_GridArray[x][y]->ReachedNextLevel && m_GridArray[x][y]->GetType() == GridObject::Type::EXIT)
+			{
 				ReachedNextLevel = true;
 			}
-			else if(m_GridArray[x][y] != nullptr){
+			else if (m_GridArray[x][y] != nullptr)
+			{
 				m_GridArray[x][y]->ReachedNextLevel = false;
 			}
 

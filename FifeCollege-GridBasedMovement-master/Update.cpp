@@ -11,13 +11,15 @@ void Engine::update(float dtAsSeconds)
 	// Update the grid
 	m_Grid.update(dtAsSeconds);
 
-	if (!m_Grid.PlayerStillInGrid) {
+	if (!m_Grid.PlayerStillInGrid)
+	{
 		m_Grid.PlayerStillInGrid = true;
 		LoadLevel(m_currentLevel);
 	}
-	if (m_Grid.ReachedNextLevel) {
+	if (m_Grid.ReachedNextLevel)
+	{
 		m_currentLevel++;
-		if(m_currentLevel < 6)
+		if (m_currentLevel < 6)
 			LoadLevel(m_currentLevel);
 		else
 		{

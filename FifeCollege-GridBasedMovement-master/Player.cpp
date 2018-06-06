@@ -78,25 +78,28 @@ bool Player::input(const sf::Event& _event)
 			}
 			else if (targetCellObject != nullptr && targetCellObject->GetType() == GridObject::BOULDER)
 			{
-				if (_event.key.code == sf::Keyboard::Right && m_grid->GetObject(targetX + 1, targetY) == nullptr) {
+				if (_event.key.code == sf::Keyboard::Right && m_grid->GetObject(targetX + 1, targetY) == nullptr)
+				{
 					m_grid->MoveObject(m_gridX + 1, m_gridY, targetX + 1, targetY, true);
 					m_grid->MoveObject(m_gridX, m_gridY, targetX, targetY, true);
 				}
-				else if (_event.key.code == sf::Keyboard::Left && m_grid->GetObject(targetX - 1, targetY) == nullptr) {
+				else if (_event.key.code == sf::Keyboard::Left && m_grid->GetObject(targetX - 1, targetY) == nullptr)
+				{
 					m_grid->MoveObject(m_gridX - 1, m_gridY, targetX - 1, targetY, true);
 					m_grid->MoveObject(m_gridX, m_gridY, targetX, targetY, true);
 				}
-				
-			}
-			else if (targetCellObject != nullptr && targetCellObject->GetType() == GridObject::EXIT) {
 
-				
-					targetCellObject->ReachedNextLevel = true;
-					
-				
+			}
+			else if (targetCellObject != nullptr && targetCellObject->GetType() == GridObject::EXIT)
+			{
+
+
+				targetCellObject->ReachedNextLevel = true;
+
+
 			}
 
-			
+
 
 			// Return true since we handled some input
 			return true;
