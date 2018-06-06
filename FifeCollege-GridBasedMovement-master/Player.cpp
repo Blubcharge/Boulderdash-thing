@@ -9,19 +9,7 @@
 Player::Player(sf::Texture& _texture)
 	: GridSprite(_texture, GridObject::PLAYER)
 {
-	/*m_diamondsLeft = 0;
-	for (int x = 0; x < m_grid->GRID_SIZE_X; ++x)
-	{
-		for (int y = 0; y < m_grid->GRID_SIZE_Y; ++y)
-		{
-			GridObject* diamondCheck = m_grid->GetObject(x, y);
-
-			if (diamondCheck != nullptr && diamondCheck->GetType() == Type::DIAMOND) {
-				m_diamondsLeft++;
-			}
-
-		}
-	}*/
+	
 }
 
 
@@ -63,13 +51,7 @@ bool Player::input(const sf::Event& _event)
 			// Get the object currently in our target Cell
 			GridObject* targetCellObject = m_grid->GetObject(targetX, targetY);
 
-			// TODO: perform special actions based on content of target cell
-			// (if boulder, push)
-			// (if boulder and can't push, don't move)
-			// (if diamond, collect)
-			// (if closed exit, don't move)
-			// (if open exit, go to next level)
-
+			//handles if player move into different types of objects
 			// NOTE: This will automatically delete whatever GridObject is in the target cell!
 			if (targetCellObject == nullptr || targetCellObject->GetType() == GridObject::DIRT)
 				m_grid->MoveObject(m_gridX, m_gridY, targetX, targetY, true);
@@ -80,6 +62,7 @@ bool Player::input(const sf::Event& _event)
 
 			else if (targetCellObject != nullptr && targetCellObject->GetType() == GridObject::BOULDER)
 			{
+				//if boulder and key pressed left/right push both boulder and player
 				if (_event.key.code == sf::Keyboard::Right && m_grid->GetObject(targetX + 1, targetY) == nullptr)
 				{
 					m_grid->MoveObject(m_gridX + 1, m_gridY, targetX + 1, targetY, true);
@@ -92,6 +75,7 @@ bool Player::input(const sf::Event& _event)
 				}
 
 			}
+			//block if exit not open
 			else if (targetCellObject != nullptr && targetCellObject->GetType() == GridObject::EXIT && m_grid->diamondsOnScreen <= 0)
 			{
 				targetCellObject->ReachedNextLevel = true;

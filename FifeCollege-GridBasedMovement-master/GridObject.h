@@ -52,12 +52,13 @@ public:
 	{
 		return m_receivedInput;
 	}
-
+	//bollen for handling if player is killed
 	bool HasKilledPlayer = false;
+	//bollen for handling if to move onto the next level
 	bool ReachedNextLevel = false;
 
 protected:
-
+	//variables for handling the grid
 	bool m_receivedInput;
 	Grid* m_grid;
 	int m_gridX;

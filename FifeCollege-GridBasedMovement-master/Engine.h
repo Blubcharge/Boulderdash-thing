@@ -20,7 +20,6 @@ private:
 	
 	sf::Sprite m_winSprite;
 
-	//Player m_player;
 
 	// The grid (will hold everything else)
 	Grid m_Grid;
